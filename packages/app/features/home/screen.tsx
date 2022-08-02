@@ -1,67 +1,67 @@
 import { Link as SolitoLink } from 'solito/link'
 import React from 'react'
 import {
-  Center,
-  Image,
-  HStack,
-  Text,
-  Heading,
-  Code,
-  Link,
-  VStack,
-  Button,
-  AspectRatio,
+  FormControl,
+  Stack,
+  Input,
   Box,
+  WarningOutlineIcon,
+  Button,
 } from 'native-base'
+import { useForm } from 'react-hook-form'
 
 export function HomeScreen() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = (data) => console.log(data)
+
+  console.log(watch('email'))
+
   return (
-    <Center
-      flex={1}
-      _dark={{ bg: 'blueGray.900' }}
-      _light={{ bg: 'blueGray.50' }}
-    >
-      <VStack alignItems="center" space="md">
-        <AspectRatio w={40} ratio={1}>
-          <Image
-            rounded="full"
-            source={{
-              uri: 'https://pbs.twimg.com/profile_images/1534837615848849413/6uNTjzMu_400x400.jpg',
-            }}
-            alt="NextJS Logo"
-            resizeMode="contain"
-          />
-        </AspectRatio>
-        <Heading>NativeBase + Solito ❤️</Heading>
-        <Text>
-          Edit <Code>packages/app/home/screen.tsx</Code> and save to reload.
-        </Text>
-        <HStack alignItems="center" space="sm">
-          <Link href="https://solito.dev/" isExternal>
-            <Text
-              _light={{ color: 'gray.700' }}
-              _dark={{ color: 'gray.400' }}
-              underline
-              fontSize={'xl'}
+    <Box alignItems="center">
+      <Box w="100%" maxWidth="300px">
+        <FormControl isRequired>
+          <Stack mx="4">
+            <FormControl.Label>Password</FormControl.Label>
+            <Input
+              type="password"
+              placeholder="password"
+              {...register('password')}
+            />
+            <FormControl.HelperText>
+              Must be atleast 6 characters.
+            </FormControl.HelperText>
+            <FormControl.ErrorMessage
+              leftIcon={<WarningOutlineIcon size="xs" />}
             >
-              Learn Solito
-            </Text>
-          </Link>
-          <Text>/</Text>
-          <Link href="https://docs.nativebase.io" isExternal>
-            <Text color="primary.500" underline fontSize={'xl'}>
-              Learn NativeBase
-            </Text>
-          </Link>
-        </HStack>
-      </VStack>
-      <Box mt="6">
-        <SolitoLink href="/user/NativeBase">
-          <Button pointerEvents="none" variant="outline" colorScheme="coolGray">
-            Open User Detail
-          </Button>
-        </SolitoLink>
+              Atleast 6 characters are required.
+            </FormControl.ErrorMessage>
+          </Stack>
+        </FormControl>
       </Box>
-    </Center>
+
+      <Box w="100%" maxWidth="300px">
+        <FormControl isRequired>
+          <Stack mx="4">
+            <FormControl.Label>Email</FormControl.Label>
+            <Input type="text" placeholder="email" {...register('email')} />
+            <FormControl.HelperText>
+              Must be atleast 6 characters.
+            </FormControl.HelperText>
+            <FormControl.ErrorMessage
+              leftIcon={<WarningOutlineIcon size="xs" />}
+            >
+              Atleast 6 characters are required.
+            </FormControl.ErrorMessage>
+          </Stack>
+          <Button onPress={handleSubmit(onSubmit)}>Send data</Button>
+        </FormControl>
+      </Box>
+    </Box>
   )
 }

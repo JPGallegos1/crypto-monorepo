@@ -1,7 +1,7 @@
 import { createParam } from 'solito'
 import { Link as SolitoLink } from 'solito/link'
 import React from 'react'
-import { Center, Heading, Button, Box, ChevronLeftIcon } from 'native-base'
+import { Center, Heading, Button, Box } from 'native-base'
 
 const { useParam } = createParam<{ id: string }>()
 
@@ -16,12 +16,7 @@ export function UserDetailScreen() {
       <Heading>{`Hey there, ${id}! 👋`}</Heading>
       <Box mt="6">
         <SolitoLink href="/">
-          <Button
-            pointerEvents="none"
-            leftIcon={<ChevronLeftIcon size="xs" />}
-            variant="outline"
-            colorScheme="coolGray"
-          >
+          <Button pointerEvents="none" colorScheme="secondary">
             Go Back
           </Button>
         </SolitoLink>
