@@ -3,7 +3,14 @@ import React from 'react'
 import { Center, HStack, Text, Heading, Link, VStack, Box } from 'native-base'
 import { ColorModeSwitch } from '../../components'
 
-export function HomeScreen() {
+export function HomeScreen({
+  route,
+}: {
+  route: { params: { posts: { id: number }[] } }
+}) {
+  const { posts } = route.params
+
+  console.log(posts)
   return (
     <Center>
       <VStack alignItems="center" space="md">
