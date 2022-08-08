@@ -1,18 +1,15 @@
 import { HomeScreen as NativeHomeScreen } from 'app/features/home/screen'
+import cryptocoinsService from 'http/services/cryptocoin.service'
 
-type Props = {
-  posts: { id: number }[]
-}
-
-export default function HomeScreen({ posts }: Props) {
-  return <NativeHomeScreen route={{ params: { posts } }} />
+export default function HomeScreen({ coins }: any) {
+  return <NativeHomeScreen route={{ params: { coins } }} />
 }
 
 export async function getStaticProps() {
-  const posts = [{ id: 1 }, { id: 2 }]
+  const coins = await cryptocoinsService.getCoins()
   return {
     props: {
-      posts,
+      coins,
     },
   }
 }
