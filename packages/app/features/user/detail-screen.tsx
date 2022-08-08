@@ -2,7 +2,6 @@ import { createParam } from 'solito'
 import { Link as SolitoLink } from 'solito/link'
 import React from 'react'
 import { Center, Heading, Button, Box, ChevronLeftIcon } from 'native-base'
-import { ColorModeSwitch } from '../../components'
 
 const { useParam } = createParam<{ id: string }>()
 
@@ -27,7 +26,6 @@ export function UserDetailScreen() {
           </Button>
         </SolitoLink>
       </Box>
-      <ColorModeSwitch />
     </Center>
   )
 }
