@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import * as Linking from 'expo-linking'
 import { useMemo } from 'react'
 
-export function NavigationProvider({
+export function NavigationProvider<FC>({
   children,
 }: {
   children: React.ReactNode
@@ -16,8 +16,8 @@ export function NavigationProvider({
           config: {
             initialRouteName: 'login',
             screens: {
-              home: '',
               login: 'login',
+              home: '',
               'user-detail': 'user/:id',
             },
           },

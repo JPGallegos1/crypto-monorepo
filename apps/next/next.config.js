@@ -37,18 +37,26 @@ module.exports = withNativebase({
     projectRoot: __dirname,
     reactStrictMode: true,
     webpack5: true,
+    images: {
+      disableStaticImages: true,
+    },
     webpack: (config, options) => {
       config.resolve.alias = {
         ...(config.resolve.alias || {}),
         'react-native$': 'react-native-web',
         '@expo/vector-icons': 'react-native-vector-icons',
       }
-      config.resolve.extensions = [
+      ;(config.resolve.extensions = [
         '.web.js',
         '.web.ts',
         '.web.tsx',
         ...config.resolve.extensions,
-      ]
+      ]),
+        config.module.rules.push({
+          test: /\.svg$/i,
+          issuer: /\.[jt]sx?$/,
+          use: ['@svgr/webpack'],
+        })
       return config
     },
   },

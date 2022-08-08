@@ -8,7 +8,7 @@ export function HomeScreen({
 }: {
   route: { params: { posts: { id: number }[] } }
 }) {
-  const { posts } = route.params
+  const posts = route.params?.posts
 
   console.log(posts)
   return (
