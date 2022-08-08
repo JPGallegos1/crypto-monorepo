@@ -2,14 +2,10 @@ import { TextLink } from 'solito/link'
 import React from 'react'
 import { Center, HStack, Text, Heading, Link, VStack, Box } from 'native-base'
 
-export function HomeScreen({
-  route,
-}: {
-  route: { params: { posts: { id: number }[] } }
-}) {
-  const posts = route.params?.posts
+export function HomeScreen({ route }: { route: any }) {
+  const coins = route.params?.coins
 
-  console.log(posts)
+  console.log(coins)
   return (
     <Center>
       <VStack alignItems="center" space="md">
