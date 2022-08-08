@@ -1,6 +1,8 @@
-import { Provider } from 'app/provider'
-import Head from 'next/head'
 import React from 'react'
+import Head from 'next/head'
+import { Provider } from 'app/provider'
+import { Header } from 'app/components'
+
 import type { SolitoAppProps } from 'solito'
 import 'raf/polyfill'
 
@@ -16,6 +18,7 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Provider>
+        <Header />
         <Component {...pageProps} />
       </Provider>
     </>
