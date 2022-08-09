@@ -5,8 +5,12 @@ import type {
   AxiosResponse,
   AxiosError,
 } from 'axios'
+import { isWeb } from 'app/constants'
 
 const http: AxiosInstance = axiosClient.create({
+  baseURL: !isWeb
+    ? 'http://10.0.2.2:4000'
+    : process.env.NEXT_PUBLIC_WEB_BASE_URL,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json; charset=utf-8',

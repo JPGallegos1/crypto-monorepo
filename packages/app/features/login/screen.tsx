@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from 'react'
 import {
   VStack,
   Input,
@@ -7,11 +8,16 @@ import {
   Box,
   Heading,
 } from 'native-base'
-import React from 'react'
+import { useRouter } from 'solito/router'
+
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { loginSchema } from '../../schemas/loginSchema'
 import { isWeb } from 'app/constants'
+
+import type { IAuth } from 'http/types/auth'
+import authService from 'http/services/auth.service'
+import { HttpResponse } from 'http/types/axios'
 
 export function LoginScreen() {
   const {
@@ -21,9 +27,24 @@ export function LoginScreen() {
   } = useForm({
     resolver: yupResolver(loginSchema),
   })
+  const { push } = useRouter()
 
-  const onSubmit = (data) => {
-    console.log('error', errors)
+  const onSubmit = async (data: IAuth) => {
+    console.log('[DATA]', data)
+
+    const payload = {
+      email: data.email,
+      password: data.password,
+    }
+
+    await authService
+      .signIn(payload)
+      .then((response: HttpResponse<IAuth>) => {
+        if (response) {
+          push('/')
+        }
+      })
+      .catch((error) => console.log('[ERROR]', error))
   }
 
   return (
@@ -47,7 +68,10 @@ export function LoginScreen() {
                   <Input
                     onBlur={onBlur}
                     placeholder="mail@mail.com"
-                    onChangeText={(val) => onChange(val)}
+                    onChangeText={(val) => {
+                      console.log(val)
+                      onChange(val)
+                    }}
                     value={value}
                   />
                 )}
