@@ -1,5 +1,5 @@
 {
-  "name": "solito-blank",
+  "name": "greener-challenge",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -14,6 +14,7 @@
   },
   "scripts": {
     "native": "cd apps/expo && expo start",
-    "web": "cd apps/next && yarn next"
+    "web": "cd apps/next && yarn next",
+    "server": "cd apps/server && yarn start-server"
   }
 }

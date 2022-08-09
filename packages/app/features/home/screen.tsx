@@ -1,16 +1,11 @@
 import { TextLink } from 'solito/link'
 import React from 'react'
 import { Center, HStack, Text, Heading, Link, VStack, Box } from 'native-base'
-import { ColorModeSwitch } from '../../components'
 
-export function HomeScreen({
-  route,
-}: {
-  route: { params: { posts: { id: number }[] } }
-}) {
-  const posts = route.params?.posts
+export function HomeScreen({ route }: { route: any }) {
+  const coins = route.params?.coins
 
-  console.log(posts)
+  console.log(coins)
   return (
     <Center>
       <VStack alignItems="center" space="md">
@@ -34,7 +29,6 @@ export function HomeScreen({
           </Link>
         </HStack>
       </VStack>
-      <ColorModeSwitch />
       <Box mt="6">
         <TextLink href="/user/fernando">Regular Link</TextLink>
         <TextLink href="/login">Login</TextLink>

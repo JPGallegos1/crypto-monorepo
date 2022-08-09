@@ -32,6 +32,7 @@ module.exports = withNativebase({
     'react-native-vector-icons-for-web',
     'solito',
     'app',
+    'http',
   ],
   nextConfig: {
     projectRoot: __dirname,
