@@ -41,7 +41,7 @@ export function LoginScreen() {
       .signIn(payload)
       .then((response: HttpResponse<IAuth>) => {
         if (response) {
-          push('/')
+          push(!isWeb ? '/onboarding' : '/')
         }
       })
       .catch((error) => console.log('[ERROR]', error))

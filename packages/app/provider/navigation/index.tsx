@@ -17,6 +17,7 @@ export function NavigationProvider<FC>({
             initialRouteName: 'login',
             screens: {
               login: 'login',
+              onboarding: 'onboarding',
               home: '',
               'coin-detail': 'coin/:name',
             },
