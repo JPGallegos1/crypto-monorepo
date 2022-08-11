@@ -18,7 +18,7 @@ export function NavigationProvider<FC>({
             screens: {
               login: 'login',
               home: '',
-              'user-detail': 'user/:id',
+              'coin-detail': 'coin/:name',
             },
           },
         }),

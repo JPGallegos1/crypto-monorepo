@@ -8,6 +8,11 @@
     "platforms": ["ios", "android"],
     "ios": {
       "bundleIdentifier": "com.solito.blank"
+    },
+    "splash": {
+      "backgroundColor": "#ffffff",
+      "resize": "contain",
+      "image": "../../packages/app/assets/logo-greener.png"
     }
   }
 }
