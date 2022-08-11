@@ -1,19 +1,31 @@
 import { createParam } from 'solito'
+import { useRouter } from 'solito/router'
 import { Link as SolitoLink } from 'solito/link'
 import React from 'react'
 import { Center, Heading, Button, Box, ChevronLeftIcon } from 'native-base'
+import { ICryptoCurrency } from 'http/types/cryptocoins'
 
-const { useParam } = createParam<{ id: string }>()
+type Query = {
+  name: string
+  price: string
+  market_cap: string
+}
 
-export function UserDetailScreen() {
-  const [id] = useParam('id')
+const { useParam } = createParam<Query>()
+
+export function CoinDetailScreen() {
+  const [name] = useParam('name')
+  const [price] = useParam('price')
+  const [market_cap] = useParam('market_cap')
+
+  console.log({ name, price, market_cap })
   return (
     <Center
       flex="1"
       _dark={{ bg: 'blueGray.900' }}
       _light={{ bg: 'blueGray.50' }}
     >
-      <Heading>{`Hey there, ${id}! 👋`}</Heading>
+      {/* <Heading>{`Hey there, ${name}! 👋`}</Heading> */}
       <Box mt="6">
         <SolitoLink href="/">
           <Button

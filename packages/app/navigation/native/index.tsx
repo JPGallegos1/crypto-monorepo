@@ -3,13 +3,13 @@ import { Header } from 'app/components'
 
 import { HomeScreen } from '../../features/home/screen'
 import { LoginScreen } from '../../features/login/screen'
-import { UserDetailScreen } from '../../features/user/detail-screen'
+import { CoinDetailScreen } from '../../features/coin/detail-screen'
 
 const Stack = createNativeStackNavigator<{
   home: undefined
   login: undefined
-  'user-detail': {
-    id: string
+  'coin-detail': {
+    name: string
   }
 }>()
 
@@ -35,10 +35,10 @@ export function NativeNavigation() {
         }}
       />
       <Stack.Screen
-        name="user-detail"
-        component={UserDetailScreen}
+        name="coin-detail"
+        component={CoinDetailScreen}
         options={{
-          title: 'User',
+          title: 'Coin',
         }}
       />
     </Stack.Navigator>
