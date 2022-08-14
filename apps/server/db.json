@@ -19,6 +19,16 @@
       "email": "jp1@mail.com",
       "password": "$2a$10$AAs6u9809UHhmmbUiWT9zeXax5.tNjGBYSg4yvjEiaBNvzDfdKTPG",
       "id": 4
+    },
+    {
+      "email": "jpg@mail.com",
+      "password": "$2a$10$eTjLPwNECeCdxzCkiLmOUuLBb7jAGwIf/PbClMZMNQ2qcqZCNk8a6",
+      "id": 5
+    },
+    {
+      "email": "new@mail.com",
+      "password": "$2a$10$ER2lp70NQRTEf3HEt15W8etpjXqfb597EOoeDm7/mbjXOGVd.0Fxa",
+      "id": 6
     }
   ]
 }

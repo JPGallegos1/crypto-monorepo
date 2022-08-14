@@ -1,15 +1,12 @@
-import { TextLink } from 'solito/link'
 import React, { useEffect, useState } from 'react'
 import {
   Center,
   HStack,
   Text,
-  Heading,
   VStack,
   Box,
   FlatList,
   Avatar,
-  Pressable,
   Spinner,
 } from 'native-base'
 import { ICryptoCurrency } from 'http/types/cryptocoins'
@@ -41,6 +38,16 @@ export function HomeScreen({ route }: Props) {
     }
     getCoinsData()
   }, [])
+
+  const transformMarketCap = (item: ICryptoCurrency) => {
+    return item.currency.includes('BTC') || item.currency.includes('ETH')
+      ? item.market_cap.slice(0, 3)
+      : item.market_cap.slice(0, 2)
+  }
+
+  const transformCoinDetail = (item: string) => {
+    return Number(item).toString().slice(0, 2)
+  }
 
   return (
     <Center width="full">
@@ -78,8 +85,15 @@ export function HomeScreen({ route }: Props) {
                     pathname: `/coin/${item.name}`,
                     query: {
                       name: item.name,
-                      price: item.price,
-                      market_cap: item.market_cap,
+                      symbol: item.symbol,
+                      market_cap: transformMarketCap(item),
+                      volume: transformCoinDetail(item['1d'].volume),
+                      circulating_supply: transformCoinDetail(
+                        item.circulating_supply
+                      ),
+                      max_supply: transformCoinDetail(
+                        item.max_supply as string
+                      ),
                     },
                   }}
                 >
@@ -158,10 +172,7 @@ export function HomeScreen({ route }: Props) {
                     {isWeb && (
                       <Box width={150}>
                         <Text>
-                          {item.currency.includes('BTC') ||
-                          item.currency.includes('ETH')
-                            ? item.market_cap.slice(0, 3)
-                            : item.market_cap.slice(0, 2)}
+                          {transformMarketCap(item)}
                            B
                         </Text>
                       </Box>
