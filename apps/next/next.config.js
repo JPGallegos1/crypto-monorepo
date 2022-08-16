@@ -46,6 +46,7 @@ module.exports = withNativebase({
         ...(config.resolve.alias || {}),
         'react-native$': 'react-native-web',
         '@expo/vector-icons': 'react-native-vector-icons',
+        'victory-native': 'victory',
       }
       ;(config.resolve.extensions = [
         '.web.js',
