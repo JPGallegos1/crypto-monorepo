@@ -17,9 +17,11 @@ export function NavigationProvider<FC>({
             initialRouteName: 'login',
             screens: {
               login: 'login',
+              signup: 'signup',
               onboarding: 'onboarding',
               home: '',
               'coin-detail': 'coin/:name',
+              profile: 'profile',
             },
           },
         }),
