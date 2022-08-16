@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   VStack,
   Input,
@@ -9,20 +9,18 @@ import {
   Heading,
 } from 'native-base'
 import { useRouter } from 'solito/router'
-import { Link } from 'solito/link'
 
 import { useForm, Controller } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { loginSchema } from '../../schemas/loginSchema'
+import { isWeb } from 'app/constants'
 
 import type { IAuth } from 'http/types/auth'
 import authService from 'http/services/auth.service'
 import { HttpResponse } from 'http/types/axios'
+import { useSession } from '../../store/user'
 
-import { loginSchema } from '../../schemas/loginSchema'
-import { isWeb } from 'app/constants'
-import { useSession } from 'app/store/user'
-
-export function LoginScreen() {
+export function SignUpScreen() {
   const {
     control,
     handleSubmit,
@@ -33,17 +31,17 @@ export function LoginScreen() {
   const { push } = useRouter()
   const session = useSession((state) => state.setSession)
 
-  const onSubmit = async (data: IAuth) => {
+  const onSignUp = async (data: IAuth) => {
     const payload = {
       email: data.email,
       password: data.password,
     }
 
     await authService
-      .signIn(payload)
+      .signUp(payload)
       .then((response: HttpResponse<IAuth>) => {
         if (response) {
-          push('/')
+          push(!isWeb ? '/onboarding' : '/')
           session(data.email)
         }
       })
@@ -60,7 +58,7 @@ export function LoginScreen() {
             color="green.600"
             marginBottom={8}
           >
-            Hello! Welcome again
+            Create account
           </Heading>
           <Box width={isWeb ? '96' : '72'}>
             <FormControl isRequired isInvalid={'email' in errors}>
@@ -110,28 +108,9 @@ export function LoginScreen() {
               </FormControl.ErrorMessage>
             </FormControl>
 
-            <VStack space={4}>
-              <Box>
-                <Button
-                  onPress={handleSubmit(onSubmit)}
-                  colorScheme="green"
-                  padding={3}
-                >
-                  Submit
-                </Button>
-              </Box>
-
-              <Box borderWidth={1} borderColor="black" borderRadius={4}>
-                <Button
-                  variant="unstyled"
-                  colorScheme="default"
-                  padding={3}
-                  onPress={() => push('/signup')}
-                >
-                  Create an account
-                </Button>
-              </Box>
-            </VStack>
+            <Button onPress={handleSubmit(onSignUp)} colorScheme="green">
+              Sign up
+            </Button>
           </Box>
         </VStack>
       </Center>

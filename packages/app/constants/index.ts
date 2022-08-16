@@ -1,5 +1,6 @@
 import { ColumnsTitle } from 'app/types'
 import { Platform } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 export const isWeb = Platform.OS === 'web'
 export const columnsTitle: ColumnsTitle[] = [
@@ -24,3 +25,7 @@ export const columnsTitle: ColumnsTitle[] = [
     text: 'Market Cap',
   },
 ]
+export const zustandStorageConfig = {
+  name: 'session',
+  getStorage: () => (!isWeb ? AsyncStorage : localStorage),
+}

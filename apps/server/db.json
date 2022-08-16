@@ -29,6 +29,21 @@
       "email": "new@mail.com",
       "password": "$2a$10$ER2lp70NQRTEf3HEt15W8etpjXqfb597EOoeDm7/mbjXOGVd.0Fxa",
       "id": 6
+    },
+    {
+      "email": "jp5@mail.com",
+      "password": "$2a$10$iSCPeNnF4MR4Selh0kXIgeAn8kLJKFBF7LYb3J2uPCmbIj56PDRme",
+      "id": 7
+    },
+    {
+      "email": "jp6@mail.com",
+      "password": "$2a$10$pWvrkDvp3wEJ2FhFHAC0cOmlbQIVUaDE2uA4PMBMaHqVAaX4pGILG",
+      "id": 8
+    },
+    {
+      "email": "jp8@mail.com",
+      "password": "$2a$10$CaEu7nT/zMHcv.SvdsFqCOoPSB4RJamxE2.272gAcOvnvFEtK414C",
+      "id": 9
     }
   ]
 }
