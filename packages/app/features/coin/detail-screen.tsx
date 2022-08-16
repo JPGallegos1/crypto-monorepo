@@ -1,6 +1,6 @@
 import React from 'react'
 import { createParam } from 'solito'
-import { Center, VStack } from 'native-base'
+import { Box, Center, VStack } from 'native-base'
 
 import { useCoinPrices } from 'app/hooks/useCoinPrices'
 import { CoinInterval } from 'app/components/CoinDetail/CoinInterval'
@@ -25,12 +25,16 @@ export function CoinDetailScreen() {
   const [volume] = useParam('volume')
   const [circulating_supply] = useParam('circulating_supply')
   const [max_supply] = useParam('max_supply')
-  const { prices, setInterval } = useCoinPrices(name as string)
+  const { prices, setInterval, interval } = useCoinPrices(name as string)
 
   return (
     <Center flex="1">
       <VStack space={4}>
-        <CoinInterval interval={setInterval} name={name as string} />
+        <CoinInterval
+          setInterval={setInterval}
+          name={name as string}
+          interval={interval}
+        />
 
         <CoinChart prices={prices && (prices as Array<string[]>)} />
 

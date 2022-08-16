@@ -1,13 +1,14 @@
+import { DayInterval } from 'app/types'
 import cryptocoinsService from 'http/services/cryptocoin.service'
 import { useState, useEffect, useCallback } from 'react'
 
 export function useCoinPrices(name: string) {
   const [prices, setPrices] = useState<Array<string[]>>([])
-  const [interval, setInterval] = useState<'7' | '14' | '30'>('7')
+  const [interval, setInterval] = useState<DayInterval>('7')
 
   const getPrices = useCallback(async () => {
     const response = await cryptocoinsService.getPrices(
-      name.toLocaleLowerCase(),
+      name?.toLocaleLowerCase(),
       interval
     )
 
@@ -30,5 +31,6 @@ export function useCoinPrices(name: string) {
   return {
     prices,
     setInterval,
+    interval,
   }
 }

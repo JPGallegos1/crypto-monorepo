@@ -6,6 +6,7 @@
     "@hookform/resolvers": "^2.9.7",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.5.0",
+    "@types/d3-color": "^3.1.0",
     "expo-linking": "^3.0.0",
     "moti": "^0.19.0-alpha.6",
     "native-base": "^3.4.11",
@@ -18,5 +19,9 @@
     "victory-native": "^36.6.0",
     "yup": "^0.32.11"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "devDependencies": {
+    "@expo/webpack-config": "^0.17.2",
+    "babel-loader": "^8.2.5"
+  }
 }
