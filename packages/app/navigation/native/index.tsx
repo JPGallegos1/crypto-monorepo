@@ -22,7 +22,6 @@ const Stack = createNativeStackNavigator<{
 }>()
 
 export function NativeNavigation() {
-  const session = useSession((state) => state.email)
   return (
     <Stack.Navigator
       screenOptions={{

@@ -1,33 +1,15 @@
-# Greener Challenge Front-End
+# Thanks!
 
-Hey JP! This is the repo where you will be working the next few days for the code challenge. There are a few things to take into account.
+Before we get started, sorry about the delay. How I said, chaotic weeks just came up with surgery included, and special thanks to Ata and Greener team for the possibility to improve my coding skills with this code challenge, which I consider very challenging for most developers
 
-- There is no time limit! But let's try not to think about that 😅
-- I will be recommending some libraries but you can always choose to use whichever you want 💅
+I'm sure a lot of things could be improved on this challenge, (better structure for Home Screen, Private Routes, Zustand store, hide the db.json 'cause obvius reasons, environment variables, etc) but I hope you get the point what the intention of making these stuff and if you have any questions or any suggestions, I'm totally open. Nothing is more comfortable to me than the feedback which makes me improve as a developer.
 
-The goal of the challenge is seeing your amazing abilities with frontend technologies! All the assets needed to complete the tasks are provided in the `assets` folder. If there is something extra you need or I missed please let me know 😃
+## Install the project
 
-This challenge consists of the following tasks
+You gonna install every dependency for the project works.
 
-- Create a login page with two fields, email and password. Fields must be validated with the following validations, email must be valid email and password bust be between 3 and 8 characters.
-- Create an oboarding flow that has 3 slides with some illustrations and some random text. Every app got one nowadays. This has to be done only for the mobile app.
-- Create a home screen that shows the top 10 trending crypto coins available on the market (you can use any GraphQL/REST API).
-- Create a coin detail screen, it should include it's name, price, market liquidity and whatever you feel is relevant. It would be great if you can manage to find a solution to implement a cross platform chart component.
-
-And last but not least, it's time for you to unleash your creativity and add something awesome to the app. Some questions that could spark your creativity are:
-
-- How to perform cross-platform data fetching? (Taking into account server-side (web app/nextjs) and client-side (mobile app) rendering)
-- How should we login in a cross-platform app? (Let's assume it's done with Firebase, how would it be implemented to be cross-platform)
-- How would you implement a cross-platform http client? (That is, it worked both server-side and client-side)
-
-You don't need to implement these solutions, although if you do it will be really amazing!; what we seek to know is your way of solving problems and how you approach solutions, they do not necessarily have to be perfect, our code is not... 😅
-
-The challenge will be cross-platform. Here are some libraries you might be interested in using for this challenge.
-
-- [Solito](https://solito.dev) (It's kind of a must 😂)
-- [native-base](https://nativebase.io/)
-- [react-hook-from](https://react-hook-form.com/)
-
-For navigation you should use [Solito](https://solito.dev), I would recommend to use it's starter template that sets you up with a monorepo along with the expo and next app. If you decide to set up your own environment.
-
-Good luck and have fun!
+1. Clone the repository: `git@github.com:JPGallegos1/greener-challenge.git`
+2. Move to `git checkout development`
+3. Create the environment variables on `[root]/packages/app/.env.local` and `[root]/apps/next/.env.local`
+4. Install dependencies `yarn install`
+5. Move to `http://localhost:19002/` to start the expo server and run it on Android or `http://localhist:3000` for web server. Even you can see the server endpoint on `http://localhost:4000/users`
