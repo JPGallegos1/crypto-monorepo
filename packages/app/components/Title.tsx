@@ -5,7 +5,7 @@ export function Title({ title }: { title: string }) {
     <Heading
       size="xl"
       textAlign="center"
-      color="green.600"
+      color="#FFA51E"
       marginBottom={8}
       textTransform="uppercase"
     >

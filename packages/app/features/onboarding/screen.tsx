@@ -8,7 +8,7 @@ export function OnboardingScreen() {
     <Onboarding
       onSkip={() => push('/')}
       onDone={() => push('/')}
-      bottomBarColor="rgb(22, 163, 74)"
+      bottomBarColor="#1FCAFF"
       pages={[
         {
           backgroundColor: '#fff',
@@ -20,7 +20,7 @@ export function OnboardingScreen() {
               borderRadius={100}
             />
           ),
-          title: 'Greener',
+          title: 'NE Crypto',
           subtitle: 'We gonna eat the world',
         },
         {
@@ -33,7 +33,7 @@ export function OnboardingScreen() {
               borderRadius={100}
             />
           ),
-          title: 'Greener',
+          title: 'NE Crypto',
           subtitle: 'With technology',
         },
         {
@@ -46,7 +46,7 @@ export function OnboardingScreen() {
               borderRadius={100}
             />
           ),
-          title: 'Greener',
+          title: 'NE Crypto',
           subtitle: 'With Blockchain',
         },
       ]}

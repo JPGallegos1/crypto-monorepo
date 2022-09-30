@@ -11,8 +11,7 @@
     },
     "splash": {
       "backgroundColor": "#ffffff",
-      "resize": "contain",
-      "image": "../../packages/app/assets/logo-greener.png"
+      "resize": "contain"
     }
   }
 }
