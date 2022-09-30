@@ -55,7 +55,7 @@ export function SignUpScreen() {
           <Heading
             size="lg"
             textAlign="center"
-            color="green.600"
+            color="#FFAB39"
             marginBottom={8}
           >
             Create account
@@ -108,7 +108,7 @@ export function SignUpScreen() {
               </FormControl.ErrorMessage>
             </FormControl>
 
-            <Button onPress={handleSubmit(onSignUp)} colorScheme="green">
+            <Button onPress={handleSubmit(onSignUp)} colorScheme="blueGray">
               Sign up
             </Button>
           </Box>

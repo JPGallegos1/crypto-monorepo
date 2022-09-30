@@ -1,11 +1,9 @@
 import React from 'react'
 import { TextLink } from 'solito/link'
-import { Box, HStack, Text, Menu, HamburgerIcon } from 'native-base'
+import { Box, HStack, Text } from 'native-base'
 import { useSession } from '../store/user'
 
-import Logo from './Logo'
 import { isWeb } from '../constants'
-import { Pressable } from 'react-native'
 import { Link } from 'solito/link'
 
 export function Header() {
@@ -15,7 +13,7 @@ export function Header() {
   return (
     <Box
       height={isWeb ? 20 : 0}
-      bg={isWeb ? '#1a1a1a' : 'white'}
+      bg="#1FCAFF"
       flexDirection={isWeb ? 'row' : 'column'}
       alignItems="center"
       justifyContent="space-between"
@@ -23,9 +21,18 @@ export function Header() {
     >
       {isWeb ? (
         <>
-          <Box width="lg" height="full" paddingX={4} paddingY={2}>
+          <Box
+            width="lg"
+            height="full"
+            paddingX={4}
+            paddingY={2}
+            alignItems="center"
+            justifyContent="center"
+          >
             <Link href="/">
-              <Logo />
+              <Text color="white" fontSize="3xl" fontWeight="bold">
+                NE Crypto
+              </Text>
             </Link>
           </Box>
 

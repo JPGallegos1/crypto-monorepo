@@ -44,6 +44,11 @@
       "email": "jp8@mail.com",
       "password": "$2a$10$CaEu7nT/zMHcv.SvdsFqCOoPSB4RJamxE2.272gAcOvnvFEtK414C",
       "id": 9
+    },
+    {
+      "email": "jp40@mail.com",
+      "password": "$2a$10$7kta8MVFVB3pCmL7aQdowOYkvzjgaNhOHSmKI52caCXi89kjYjrBS",
+      "id": 10
     }
   ]
 }

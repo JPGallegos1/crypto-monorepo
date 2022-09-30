@@ -12,8 +12,8 @@ function MyApp({ Component, pageProps }: SolitoAppProps) {
   return (
     <>
       <Head>
-        <title>Greener</title>
-        <meta name="description" content="Greener Challenge" />
+        <title>NE Crypto</title>
+        <meta name="description" content="NE Crypto" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Provider>

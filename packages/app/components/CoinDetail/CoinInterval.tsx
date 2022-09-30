@@ -34,9 +34,9 @@ export function CoinInterval({ setInterval, name, interval }: Props) {
             <Button
               leftIcon={<ChevronLeftIcon size="xs" />}
               variant="unstyled"
-              background="trueGray.100"
-              padding={0}
+              padding="1"
               justifyContent="flex-start"
+              borderRadius={12}
             >
               All prices
             </Button>

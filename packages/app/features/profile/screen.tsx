@@ -1,5 +1,5 @@
 import { isWeb } from 'app/constants'
-import { Box, Center, Text, VStack, Image, Heading, Button } from 'native-base'
+import { Box, Center, VStack, Image, Heading, Button } from 'native-base'
 import { useRouter } from 'solito/router'
 import { useSession } from '../../store/user'
 
@@ -33,7 +33,7 @@ export function ProfileScreen() {
             }}
           />
         </Box>
-        <Button onPress={logOut} colorScheme="green">
+        <Button onPress={logOut} colorScheme="blueGray">
           Log out
         </Button>
       </VStack>

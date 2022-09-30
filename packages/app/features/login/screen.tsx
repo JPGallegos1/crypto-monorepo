@@ -57,7 +57,7 @@ export function LoginScreen() {
           <Heading
             size="lg"
             textAlign="center"
-            color="green.600"
+            color="#FFAB39"
             marginBottom={8}
           >
             Hello! Welcome again
@@ -114,7 +114,7 @@ export function LoginScreen() {
               <Box>
                 <Button
                   onPress={handleSubmit(onSubmit)}
-                  colorScheme="green"
+                  colorScheme="blueGray"
                   padding={3}
                 >
                   Submit
